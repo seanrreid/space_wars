@@ -1,3 +1,7 @@
+html {
+    font-size: 20px;
+}
+
 main {
     display: flex;
     flex-wrap: wrap;
@@ -27,7 +31,7 @@ main {
 }
 
 .filmList li {
-    font-size: 2em;
+    font-size: 2rem;
     line-height: 2.5;
     border-top: 3px solid;
     border-image: linear-gradient(
@@ -47,14 +51,14 @@ main {
 .filmList .filmList__episode {
     position: absolute;
     border-radius: 50%;
-    padding: 10px;
-    height: 60px;
-    width: 60px;
+    padding: 0.75rem;
+    height: 3rem;
+    width: 3rem;
     background-color: #000;
     text-align: center;
-    line-height: 1.25em;
+    line-height: 1;
     color: #fff;
-    font-size: 1em;
+    font-size: 1.5rem;
 }
 
 .filmList li:nth-child(odd) {
