@@ -11,6 +11,7 @@ const _torch = (() => {
     methods.addEl = (element) => document.createElement(element);
     methods.appendTo = (parent, child) => parent.appendChild(child);
     methods.empty = (element) => element.innerHTML = '';
+    methods.addClass = (element, className) => element.classList.add(className);
     methods.ajax = (url) => {
         return fetch(url)
             .then(function (response) {

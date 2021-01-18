@@ -44,20 +44,41 @@ const getCharacterDetails = (characterUrl) => {
 };
 
 const buildProfile = (character) => {
-    const characterDetails = _torch.getEl('#characterDetails'),
-        bioElement = _torch.addEl('div'),
-        filmList = _torch.addEl('ul');
-
-    console.log(character);
+    const characterDetails = _torch.getEl('#characterDetails');
 
     const content = `<h2 class="title is-2">${character.name}</h2>
-        <p>${character.name} appears in: </p>`;
+        <hr/>`;
 
     _torch.empty(characterDetails);
-    bioElement.innerHTML = content;
+    characterDetails.innerHTML = content;
+    getFilms(character.films);
+};
 
-    _torch.appendTo(bioElement, filmList);
-    _torch.appendTo(characterDetails, bioElement);
+const getFilms = (filmUrls) => {
+    Promise.all(
+        filmUrls.map((filmUrl) => {
+            return _torch.ajax(filmUrl).then((film) => {
+                return film;
+            });
+        })
+    ).then((filmList) => {
+        buildFilmList(filmList);
+    });
+};
+
+const buildFilmList = (filmList) => {
+    const characterDetails = _torch.getEl('#characterDetails'),
+        filmListEl = _torch.addEl('ul');
+    _torch.addClass(filmListEl, 'filmList');
+
+    const orderedFilms = filmList.sort((a, b) => a.episode_id - b.episode_id);
+    orderedFilms.map((film) => {
+        const listItem = _torch.addEl('li');
+        listItem.innerHTML = `<span class='filmList__episode'>${film.episode_id}</span>${film.title}`;
+        _torch.appendTo(filmListEl, listItem);
+    });
+
+    _torch.appendTo(characterDetails, filmListEl);
 };
 
 getCharacters();

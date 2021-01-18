@@ -1,4 +1,9 @@
-.loader__menu {
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu__loader {
     display: none;
     height: 50px;
     margin: auto;
@@ -6,12 +11,75 @@
     width: 50px;
 }
 
-.loader__menu.visible {
+.menu__loader.visible {
     display: flex;
 }
 
-.loader__menu svg {
+.menu__loader svg {
     height: 100%;
     margin: auto;
     width: 100%;
+}
+
+.menu__character-list {
+    flex: 1 0 320px;
+    max-width: 320px;
+}
+
+.filmList li {
+    font-size: 2em;
+    line-height: 2.5;
+    border-top: 3px solid;
+    border-image: linear-gradient(
+        to right,
+        #2e4558 0%,
+        #9f0613 50%,
+        #e89e10 100%
+    );
+    border-image-slice: 1;
+    border-width: 3px;
+    margin: 0;
+    padding: 40px;
+    position: relative;
+    color: #000;
+}
+
+.filmList .filmList__episode {
+    position: absolute;
+    border-radius: 50%;
+    padding: 10px;
+    height: 60px;
+    width: 60px;
+    background-color: #000;
+    text-align: center;
+    line-height: 1.25em;
+    color: #fff;
+    font-size: 1em;
+}
+
+.filmList li:nth-child(odd) {
+    border-left: 3px solid;
+}
+
+.filmList li:nth-child(even) {
+    border-right: 3px solid;
+}
+
+.filmList li:first-child {
+    border-top: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.filmList li:last-child {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.filmList li:nth-child(odd) .filmList__episode {
+    left: -30px;
+}
+
+.filmList li:nth-child(even) .filmList__episode {
+    right: -30px;
 }
