@@ -4,7 +4,10 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>SPACE WARS!!</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+        />
         <link rel="stylesheet" href="css/styles.css" />
     </head>
     <body>
@@ -13,9 +16,111 @@
                 <h1 class="title is-1">SPACE WARS WITH LASER SWORDS!!</h1>
             </div>
         </header>
-        <main>
-            <nav id="characterList"></nav>
-            <section  id="characterDetails" class="container"></section>
+        <main class="container">
+            <aside class="menu">
+                <div id="loader" class="loader__menu visible">
+                    <svg
+                        width="105"
+                        height="105"
+                        viewBox="0 0 105 105"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="#000"
+                    >
+                        <circle cx="12.5" cy="12.5" r="12.5">
+                            <animate
+                                attributeName="fill-opacity"
+                                begin="0s"
+                                dur="1s"
+                                values="1;.2;1"
+                                calcMode="linear"
+                                repeatCount="indefinite"
+                            />
+                        </circle>
+                        <circle cx="12.5" cy="52.5" r="12.5" fill-opacity=".5">
+                            <animate
+                                attributeName="fill-opacity"
+                                begin="100ms"
+                                dur="1s"
+                                values="1;.2;1"
+                                calcMode="linear"
+                                repeatCount="indefinite"
+                            />
+                        </circle>
+                        <circle cx="52.5" cy="12.5" r="12.5">
+                            <animate
+                                attributeName="fill-opacity"
+                                begin="300ms"
+                                dur="1s"
+                                values="1;.2;1"
+                                calcMode="linear"
+                                repeatCount="indefinite"
+                            />
+                        </circle>
+                        <circle cx="52.5" cy="52.5" r="12.5">
+                            <animate
+                                attributeName="fill-opacity"
+                                begin="600ms"
+                                dur="1s"
+                                values="1;.2;1"
+                                calcMode="linear"
+                                repeatCount="indefinite"
+                            />
+                        </circle>
+                        <circle cx="92.5" cy="12.5" r="12.5">
+                            <animate
+                                attributeName="fill-opacity"
+                                begin="800ms"
+                                dur="1s"
+                                values="1;.2;1"
+                                calcMode="linear"
+                                repeatCount="indefinite"
+                            />
+                        </circle>
+                        <circle cx="92.5" cy="52.5" r="12.5">
+                            <animate
+                                attributeName="fill-opacity"
+                                begin="400ms"
+                                dur="1s"
+                                values="1;.2;1"
+                                calcMode="linear"
+                                repeatCount="indefinite"
+                            />
+                        </circle>
+                        <circle cx="12.5" cy="92.5" r="12.5">
+                            <animate
+                                attributeName="fill-opacity"
+                                begin="700ms"
+                                dur="1s"
+                                values="1;.2;1"
+                                calcMode="linear"
+                                repeatCount="indefinite"
+                            />
+                        </circle>
+                        <circle cx="52.5" cy="92.5" r="12.5">
+                            <animate
+                                attributeName="fill-opacity"
+                                begin="500ms"
+                                dur="1s"
+                                values="1;.2;1"
+                                calcMode="linear"
+                                repeatCount="indefinite"
+                            />
+                        </circle>
+                        <circle cx="92.5" cy="92.5" r="12.5">
+                            <animate
+                                attributeName="fill-opacity"
+                                begin="200ms"
+                                dur="1s"
+                                values="1;.2;1"
+                                calcMode="linear"
+                                repeatCount="indefinite"
+                            />
+                        </circle>
+                    </svg>
+                </div>
+                <nav id="characterList"></nav>
+            </aside>
+            <section id="characterDetails" class="container"></section>
         </main>
     </body>
     <script src="js/torch.js"></script>

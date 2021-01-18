@@ -1,0 +1,17 @@
+.loader__menu {
+    display: none;
+    height: 50px;
+    margin: auto;
+    padding: 8px;
+    width: 50px;
+}
+
+.loader__menu.visible {
+    display: flex;
+}
+
+.loader__menu svg {
+    height: 100%;
+    margin: auto;
+    width: 100%;
+}

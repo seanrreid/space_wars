@@ -16,8 +16,12 @@ getCharacters = () => {
 };
 
 generateLinks = (element, items) => {
+    loader = _torch.getEl('#loader');
+    loader.classList.toggle('visible');
+
     return items.map((character) => {
         const listItems = _torch.addEl('li');
+        listItems.classList.add('menu-list');
         listItems.innerHTML = `<a href="${character.url}">${character.name}</a>`;
         _torch.appendTo(element, listItems);
     });
@@ -47,8 +51,9 @@ const buildProfile = (character) => {
     console.log(character);
 
     const content = `<h2 class="title is-2">${character.name}</h2>
-        <p>Character Details will go here.</p>`;
+        <p>${character.name} appears in: </p>`;
 
+    _torch.empty(characterDetails);
     bioElement.innerHTML = content;
 
     _torch.appendTo(bioElement, filmList);
