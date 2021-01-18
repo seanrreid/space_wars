@@ -25,5 +25,7 @@ const _torch = (() => {
                 return error;
             });
     };
+    methods.convertToSSL = (url) => url.replace(/^http:\/\//i, 'https://');
+
     return methods;
 })();

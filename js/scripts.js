@@ -20,9 +20,11 @@ generateLinks = (element, items) => {
     loader.classList.toggle('visible');
 
     return items.map((character) => {
-        const listItems = _torch.addEl('li');
+        const characterUrl = _torch.convertToSSL(character.url),
+            listItems = _torch.addEl('li');
+
         listItems.classList.add('menu-list');
-        listItems.innerHTML = `<a href="${character.url}">${character.name}</a>`;
+        listItems.innerHTML = `<a href="${characterUrl}">${character.name}</a>`;
         _torch.appendTo(element, listItems);
     });
 };
@@ -44,10 +46,8 @@ const getCharacterDetails = (characterUrl) => {
 };
 
 const buildProfile = (character) => {
-    const characterDetails = _torch.getEl('#characterDetails');
-
-    const content = `<h2 class="title is-2">${character.name}</h2>
-        <hr/>`;
+    const characterDetails = _torch.getEl('#characterDetails'),
+        content = `<h2 class="title is-2">${character.name}</h2><hr/>`;
 
     _torch.empty(characterDetails);
     characterDetails.innerHTML = content;
@@ -57,7 +57,8 @@ const buildProfile = (character) => {
 const getFilms = (filmUrls) => {
     Promise.all(
         filmUrls.map((filmUrl) => {
-            return _torch.ajax(filmUrl).then((film) => {
+            const filmUrlSSL = _torch.convertToSSL(filmUrl);
+            return _torch.ajax(filmUrlSSL).then((film) => {
                 return film;
             });
         })
