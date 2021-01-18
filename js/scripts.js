@@ -6,7 +6,7 @@ getCharacters = () => {
 
     _torch.appendTo(characterList, characterUL);
     _torch
-        .ajax(`${API_BASE}people`)
+        .ajax(`${API_BASE}people/`)
         .then((characters) => {
             generateLinks(characterUL, characters.results);
         })
